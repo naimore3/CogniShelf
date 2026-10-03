@@ -71,28 +71,15 @@ function readTokens() {
     stage: token("--nmd-stage", "#f4effa"),
     roomFloor: token("--nmd-room-floor", "#ffffff"),
     roomWall: token("--nmd-room-wall", "#efe6f8"),
-    roomFrame: token("--nmd-room-frame", "#ffffff"),
     pillar: token("--nmd-pillar", "#d9cfe8"),
     base: token("--nmd-base", "#bfb0d8"),
-    interior: token("--nmd-interior", "#ffffff"),
     outline: token("--nmd-outline", "#2b3446"),
     stageFill: token("--nmd-stage-fill", "#ffffff"),
     roomKeyLight: token("--nmd-room-key-light", "#fff1dd"),
     roomFillLight: token("--nmd-room-fill-light", "#e8f2ff"),
     roomBounceLight: token("--nmd-room-bounce-light", "#f2e8ff"),
     particle: token("--nmd-particle", "#7c3aed"),
-    particleOpacity: Number.parseFloat(token("--nmd-particle-opacity", "0.42")),
-    "floor-cover": token("--nmd-floor-cover", "#7c3aed"),
-    "floor-burger": token("--nmd-floor-burger", "#f59e0b"),
-    "floor-library": token("--nmd-floor-library", "#14b8a6"),
-    "floor-store": token("--nmd-floor-store", "#05d9e8"),
-    "floor-cafe": token("--nmd-floor-cafe", "#d97706"),
-    "floor-music": token("--nmd-floor-music", "#ec4899"),
-    "floor-class": token("--nmd-floor-class", "#22c55e"),
-    "floor-lab": token("--nmd-floor-lab", "#3b82f6"),
-    "floor-studio": token("--nmd-floor-studio", "#a855f7"),
-    "floor-observatory": token("--nmd-floor-observatory", "#6366f1"),
-    "floor-roof": token("--nmd-floor-roof", "#f97316")
+    particleOpacity: Number.parseFloat(token("--nmd-particle-opacity", "0.42"))
   };
 }
 

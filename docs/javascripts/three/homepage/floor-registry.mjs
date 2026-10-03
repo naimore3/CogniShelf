@@ -14,7 +14,7 @@
 
 /* 房间尺寸：地面为正方形（width = depth，即 w = d），height 独立；
    数值只锁定比例、不放大整体尺寸（占地 4.2×2.2 → 3.0×3.0，高不变）。
-   依据：.documents/首页设计/场景设计概述.md v3.11。 */
+   依据：.documents/首页设计/场景设计概述.md v3.12。 */
 export const ROOM_SIZE = {
   width: 3.0,
   height: 3.2,
