@@ -1,40 +1,55 @@
 /* 房间灯组：每间房复制同一份本地灯位，主光 / 补光 / 反弹光都只朝本房间内打。
    灯组不挂在房间结构上，而是按房间中心独立摆放；可见性与主光阴影的投射范围都与当前层 ±1 同步（邻层阴影提前渲染，换层不跳变）。
-   聚光角度与距离负责把光限制在本房间，舞台环境底光只负责抬起暗部，避免死黑。 */
+
+   风格口径（2026-10-03 起）：柔光玩具棚拍 —— 大面积柔主光（宽锥角 + penumbra 1 +
+   弱距离衰减）抬亮整间房，半球环境光把暗部抬起来，哑光塑料的柔和明暗另外由
+   scene.environment 的 IBL 塑形。阴影改用 VSM + 2048 贴图 + radius 4，边缘才是软的。
+   锥角必须控制在 0.8 rad 以内：房间链的下一间在灯位视角里大约偏离 44°，再宽就会
+   把邻房的墙打亮，出现跨房间漏光。 */
 
 import { FLOORS } from "./floor-registry.mjs";
 
 const RIG = {
   key: {
-    position: [-2.45, 3.7, 3.35],
-    target: [0, -0.05, 0],
-    angle: 0.6,
-    penumbra: 0.78,
-    distance: 10.5,
-    decay: 1.05,
-    intensity: { light: 8.2, dark: 13 },
-    color: { light: "#fff1dd", dark: "#ffd9a8" }
+    position: [-2.3, 4.4, 2.7],
+    target: [0, -0.15, 0],
+    angle: 0.74,
+    penumbra: 1,
+    distance: 9.5,
+    decay: 0.75,
+    intensity: { light: 3.4, dark: 5 },
+    color: { light: "#fff7ec", dark: "#ffe6bd" }
   },
   fill: {
-    position: [0.9, 1.25, 3.85],
-    target: [-0.15, -0.1, -0.15],
+    position: [1.9, 1.6, 3.6],
+    target: [-0.1, -0.1, -0.1],
     angle: 0.9,
-    penumbra: 0.9,
-    distance: 9.5,
-    decay: 1,
-    intensity: { light: 2.9, dark: 5.2 },
-    color: { light: "#e8f2ff", dark: "#9fc4ff" }
+    penumbra: 1,
+    distance: 8.5,
+    decay: 0.75,
+    intensity: { light: 1.2, dark: 1.8 },
+    color: { light: "#eef4ff", dark: "#a8c4ff" }
   },
   bounce: {
-    position: [-1.3, 0.2, 2.2],
-    target: [0.2, 0.1, -0.6],
+    position: [-1.5, -0.9, 2.4],
+    target: [0.2, 0.1, -0.5],
     angle: 0.95,
-    penumbra: 0.95,
-    distance: 7.5,
-    decay: 1,
-    intensity: { light: 1.6, dark: 3.2 },
-    color: { light: "#f2e8ff", dark: "#c69cff" }
+    penumbra: 1,
+    distance: 7,
+    decay: 0.75,
+    intensity: { light: 0.7, dark: 1.1 },
+    color: { light: "#f7efff", dark: "#c9a6ff" }
   }
+};
+
+const SHADOW = {
+  mapSize: 2048,
+  near: 1,
+  far: 12,
+  bias: -0.0005,
+  normalBias: 0.02,
+  radius: 4,
+  blurSamples: 10
 };
 
 function toColor(THREE, value, fallback) {
@@ -81,12 +96,13 @@ export function createRoomLighting(THREE, options = {}) {
     const key = createSpotFrom(RIG.key);
     key.light.name = `nmd-key-${item.id}`;
     key.light.castShadow = false;
-    key.light.shadow.mapSize.set(512, 512);
-    key.light.shadow.camera.near = 1;
-    key.light.shadow.camera.far = 12;
-    key.light.shadow.bias = -0.0005;
-    key.light.shadow.normalBias = 0.02;
-    key.light.shadow.radius = 2;
+    key.light.shadow.mapSize.set(SHADOW.mapSize, SHADOW.mapSize);
+    key.light.shadow.camera.near = SHADOW.near;
+    key.light.shadow.camera.far = SHADOW.far;
+    key.light.shadow.bias = SHADOW.bias;
+    key.light.shadow.normalBias = SHADOW.normalBias;
+    key.light.shadow.radius = SHADOW.radius;
+    key.light.shadow.blurSamples = SHADOW.blurSamples;
     rig.add(key.light, key.target);
 
     const fill = createSpotFrom(RIG.fill);
@@ -107,6 +123,10 @@ export function createRoomLighting(THREE, options = {}) {
     });
   });
 
+  /* 半球环境光的色与强度都随主题走；强度口径与顶光同一量级，
+     让哑光塑料的最暗面也留在 18% 亮度以上，不出现死黑。 */
+  const STAGE_FILL = { light: 0.25, dark: 0.5 };
+
   function update(tokens = {}) {
     const dark = tokens.scheme && tokens.scheme !== "default";
     const mode = dark ? "dark" : "light";
@@ -124,7 +144,7 @@ export function createRoomLighting(THREE, options = {}) {
 
     stageLight.color.copy(toColor(THREE, tokens.stageFill, dark ? "#5a3d9c" : "#ffffff"));
     stageLight.groundColor.copy(toColor(THREE, tokens.stage, dark ? "#160f2b" : "#f4effa"));
-    stageLight.intensity = dark ? 0.55 : 0.27;
+    stageLight.intensity = STAGE_FILL[mode];
   }
 
   function setActiveFloor(floor) {

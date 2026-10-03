@@ -55,7 +55,8 @@ function loadModules() {
     import("./rain-system.mjs"),
     import("./scroll-map.mjs"),
     import("./floor-registry.mjs"),
-    import("./lighting.mjs")
+    import("./lighting.mjs"),
+    import("./scene-kit.mjs")
   ]);
 }
 
@@ -101,9 +102,14 @@ function createScene(THREE, modules, container) {
   });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, PIXEL_RATIO_MAX));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  /* 风格口径（2026-10-03 起）：ACES 色调映射 + VSM 软阴影。
+     实测对比 AgX：同样曝光下 AgX 把高饱和色块压成灰粉调、面上对比度偏低，
+     与参考图「明快高饱和块面」对不上；ACES 在 1.45 倍曝光下亮面仍不糊。 */
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.45;
   renderer.setClearColor(0x000000, 0);
   renderer.shadowMap.enabled = quality.shadows;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = THREE.VSMShadowMap;
 
   const canvas = renderer.domElement;
   canvas.setAttribute("aria-hidden", "true");
@@ -112,6 +118,39 @@ function createScene(THREE, modules, container) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(modules[9].ROOM_CAMERA.fov, 1, 0.1, 520);
+
+  /* 棚拍环境贴图：哑光塑料的柔和明暗一半来自它。亮暗主题各烘一张，
+     暗色主题必须换更暗的盒子，否则白盒子会把夜景照成灰板。 */
+  const ENVIRONMENT_PALETTE = {
+    light: {
+      horizon: "#c9cee0",
+      ceiling: "#ffffff",
+      ground: "#5d5674",
+      keyPanel: "#ffffff"
+    },
+    dark: {
+      horizon: "#2e2850",
+      ceiling: "#7d6cc0",
+      ground: "#140e26",
+      keyPanel: "#b9a6ff"
+    }
+  };
+  let environment = null;
+
+  function refreshEnvironment(dark) {
+    if (environment) {
+      scene.environment = null;
+      environment.dispose();
+    }
+    environment = modules[11].createStudioEnvironment(
+      THREE,
+      renderer,
+      dark ? ENVIRONMENT_PALETTE.dark : ENVIRONMENT_PALETTE.light
+    );
+    scene.environment = environment.texture;
+  }
+
+  refreshEnvironment(false);
 
   let tokens = readTokens();
   const materials = modules[1].createMaterialLibrary(THREE);
@@ -206,6 +245,7 @@ function createScene(THREE, modules, container) {
 
   const themeObserver = new MutationObserver(() => {
     tokens = readTokens();
+    refreshEnvironment(tokens.scheme !== "default");
     materials.update(tokens);
     ambient.setTheme(tokens);
     builder.update(tokens);
@@ -259,6 +299,11 @@ function createScene(THREE, modules, container) {
       interiors.dispose();
       textures.dispose();
       materials.dispose();
+      if (environment) {
+        scene.environment = null;
+        environment.dispose();
+        environment = null;
+      }
       renderer.dispose();
       if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
     }
