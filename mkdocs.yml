@@ -57,7 +57,7 @@ theme:
     logo: fontawesome/regular/sun
 
 nav:
-  - 主页: 主页/index.md
+  - 主页: index.md
   - 课程笔记: 
     - 大二上: 
       - 运筹学: 
@@ -310,12 +310,8 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mermaid.mjs     # Mermaid 加载器（ESM，含 mindmap 配色配置）
   - javascripts/mathjax.js         # MathJax 数学公式配置
-  - javascripts/homepage/homepage.js        # 主页 JS 框架入口（生命周期 / 编排 / 非主页零业务开销）
-  - javascripts/three/homepage/convenience-scene.mjs  # 主页 Three.js 场景入口（楼层注册表 / 滚动镜头 / CSS 降级）
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/homepage/homepage.css   # 主页布局与明暗 tokens
-  - stylesheets/homepage/weather.css    # 主页场景层与 CSS 降级
   - stylesheets/mindmap.css    # 思维导图容器样式（配合 mermaid.mjs 配色）
