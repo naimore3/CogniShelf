@@ -8,18 +8,9 @@ site/
 # 前端三方库由 npm 管理，不入库（依赖声明见 package.json）
 node_modules/
 
-# 构建期由 hooks/vendor_three.py 从 node_modules/three 生成
-docs/javascripts/vendor/
-
 # Python 字节码缓存（mkdocs 导入 hooks/ 时生成，不入库）
 __pycache__/
 *.pyc
-
-# Local Python virtual environment
-.venv/
-
-# Playwright MCP browser artifacts
-.playwright-mcp/
 
 # OpenCode session continuation state
 .omo/
@@ -28,8 +19,5 @@ __pycache__/
 .codex/
 AGENTS.md
 
-# Screenshots for documentation
-.documents/阶段截图/
-
 # Workspace
-Naimore3-s-Learning-Notes.code-workspace
+.code-workspace

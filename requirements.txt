@@ -1,31 +1,15 @@
 # =============================================================
-# 墨海寻珠 · Python 依赖（pip 唯一口径）
+# Python 依赖的唯一入口（pip 口径）。
+# 远端 Cloudflare Pages：pip install -r requirements.txt && npm ci && mkdocs build
 #
-# 本地（conda 环境 naimore3-docs 内）：
-#   conda run -n naimore3-docs pip install -r requirements.txt
-#
-# 远端 / CI / Cloudflare Pages：
-#   pip install -r requirements.txt && mkdocs build
-#
-# 说明：
-# - 版本用 == 锁定为本地已验证的组合（与原 environment.yml 的 pip 段一致）。
-# - python=3.10 与 nodejs 不在本文件里：conda 环境用
-#     conda create -n naimore3-docs -c conda-forge python=3.10 pip
-#     conda install -n naimore3-docs -c conda-forge nodejs=22
-#   nodejs 仅本地拉取前端库用，站点构建不依赖 Node。
+# 注意：本文件只写 Python 包。Node 侧的依赖（three 等）写在 package.json，
+# 由 npm 管理，构建期由 hooks/vendor_three.py 注入 docs/ → site/。
+# 不要把 node.js / npm 包写进本文件——pip 装不了它们。
 # =============================================================
 
-# MkDocs 核心与 Material 主题
-mkdocs==1.6.1
-mkdocs-material==9.7.7
+# MkDocs核心与Material主题
+mkdocs >= 1.6
+mkdocs-material >= 9.7
 
-# 中文搜索分词（装好后 Material 的搜索会自动使用 jieba）
-jieba==0.42.1
-
-# 常用插件（均已安装；是否启用看 mkdocs.yml 的 plugins:）
-mkdocs-minify-plugin==0.8.0
-mkdocs-redirects==1.2.3
-mkdocs-git-revision-date-localized-plugin==1.6.0
-
-# Markdown 扩展
-pymdown-extensions==11.0.2
+# 中文搜索分词
+jieba
