@@ -1,9 +1,12 @@
 site_name: 学习笔记
 
-# 构建期钩子：把 npm 安装的 three 注入 docs/javascripts/vendor/three/（该目录不入库）
-# 依赖声明见 package.json；缺 node_modules 时会直接让构建失败，避免远端静默降级。
+# 构建期钩子（docs/ 下的资源目录是构建产物，不入库）：
+#   - frontend.py：把 frontend/ 下的 javascripts、stylesheets 注入 docs/
+#   - threejs.py：把 npm 安装的 three 注入 docs/javascripts/vendor/three/（依赖声明见 package.json）
+# 任一注入失败都会直接让构建报错，避免远端静默降级。
 hooks:
-  - hooks/vendor_three.py
+  - hooks/frontend.py
+  - hooks/threejs.py
 
 theme: 
 
@@ -54,7 +57,7 @@ theme:
     logo: fontawesome/regular/sun
 
 nav:
-  - 主页: index.md
+  - 主页: 主页/index.md
   - 课程笔记: 
     - 大二上: 
       - 运筹学: 
