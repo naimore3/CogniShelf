@@ -1,0 +1,13 @@
+{
+  "name": "cognishelf-docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "仅声明站点用到的前端三方库（Three.js）。node_modules 不入库；构建时由 hooks/vendor_three.py 注入站点。",
+  "comments": {
+    "install": "本地：npm install。Cloudflare Pages 构建命令：npm ci && mkdocs build",
+    "three": "版本必须与 docs/javascripts/three/ 下代码实际验证过的版本一致，升级见 hooks/vendor_three.py 的 FILES 清单说明"
+  },
+  "dependencies": {
+    "three": "0.160.0"
+  }
+}

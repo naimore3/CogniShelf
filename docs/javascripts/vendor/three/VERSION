@@ -1,6 +1,0 @@
-three@0.160.0
-
-# 由 conda 环境 naimore3-docs 内的 npm 取包后拷贝而来，勿手工修改：
-#   conda run -n naimore3-docs npm install --prefix <tmp> three@0.160.0
-# 升级到 0.17x / 0.18x 时，build/ 目录会多出 three.core.js，需要整个 build/ 一起拷贝。
-# 目录清单与用途见 .documents/Three.js开发环境与部署配置.md 第 2.5 节。

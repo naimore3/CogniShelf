@@ -1,5 +1,10 @@
 site_name: 学习笔记
 
+# 构建期钩子：把 npm 安装的 three 注入 docs/javascripts/vendor/three/（该目录不入库）
+# 依赖声明见 package.json；缺 node_modules 时会直接让构建失败，避免远端静默降级。
+hooks:
+  - hooks/vendor_three.py
+
 theme: 
 
   name: material
