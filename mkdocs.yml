@@ -315,3 +315,4 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/mindmap.css    # 思维导图容器样式（配合 mermaid.mjs 配色）
+  - stylesheets/homepage/canvas.css  # 主页左右分栏 + 左侧 sticky 画布（仅主页结构命中）
