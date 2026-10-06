@@ -1,17 +1,3 @@
-/* =============================================================
-   墨海寻珠 · 全站全局样式（跨页面共用）
-   作用域：所有页面；首页专属样式按 .documents/前端框架规则.md
-           放入 docs/stylesheets/homepage/，不进入本文件。
-
-   目录
-     0  字体（全站，系统字体栈）
-   ============================================================= */
-
-/* ---------- 0. 字体（全站，系统字体栈） ----------
-   仓库硬约束：不使用外部字体。mkdocs.yml 的 theme.font 已设为 false，
-   这里显式给出中英文系统字体栈，避免退回 Material 默认的 Roboto 外链。
-   中文标题仍由各标题规则单独指定 Georgia + 宋体系字体栈 */
-
 :root {
   --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
                   "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
