@@ -5,9 +5,19 @@ body:has(.nmd-home) .md-grid {
   max-width: none;
 }
 
+/* 抹掉正文区自带的上下留白 */
+body:has(.nmd-home) .md-main__inner {
+  margin-top: 0;
+}
+
 body:has(.nmd-home) .md-content__inner {
   margin: 0;
   padding: 0;
+}
+
+/* 隐藏 Material 自动生成的页面标题 */
+body:has(.nmd-home) .md-content__inner > h1 {
+  display: none;
 }
 
 /* 左 65% 画布，右 35% 文案 */
