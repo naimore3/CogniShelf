@@ -20,4 +20,4 @@
 3. **教育与行业分析**：深入研究不同教育阶段和目标行业的特点、发展趋势、就业前景等，为职业定位提供依据。
 4. **职业定位**：综合以上分析结果，确定适合自己的职业目标，并制定相应的发展计划。在制定规划过程中，学会反推，从目标出发规划每一步行动，同时广泛听取他人的意见和建议，做到兼听则明。 
 ![exported_image.png](exported_image.png)
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Sixteenth_Class_个人规划及发展建议/Sixteenth_Class_个人规划及发展建议.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Sixteenth_Class_个人规划及发展建议/Sixteenth_Class_个人规划及发展建议.pdf" width="100%" height="800px" style="border: none;"></iframe>

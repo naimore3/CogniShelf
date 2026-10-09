@@ -82,4 +82,4 @@
 - **Improved Fraud Detection and Security**: AI - driven chatbots monitor transactions to detect fraudulent activities, protecting both the institution and its customers.
 - **Continuous Learning and Adaptation**: Modern chatbots use machine learning algorithms and natural language processing to learn from previous interactions and improve responses to a wide range of customer inquiries. 
 ![exported_image.png](exported_image.png)
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Fifteenth_Class_教授课7互动直播课/Fifteenth_Class_教授课7互动直播课.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Fifteenth_Class_教授课7互动直播课/Fifteenth_Class_教授课7互动直播课.pdf" width="100%" height="800px" style="border: none;"></iframe>

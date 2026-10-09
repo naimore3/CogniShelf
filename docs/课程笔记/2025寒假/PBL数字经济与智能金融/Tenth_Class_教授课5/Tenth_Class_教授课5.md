@@ -47,4 +47,4 @@
     - **Switzerland & Nordic Countries**: Benefit from high - quality human capital and strong performance in knowledge - related factors.
     - **Singapore**: Despite high future readiness, lost some ground in 2021 due to drops in technology and knowledge.
     - **USA**: Remains at the top, excelling in future readiness and knowledge, with a strong scientific infrastructure. 
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Tenth_Class_教授课5/Tenth_Class_教授课5.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Tenth_Class_教授课5/Tenth_Class_教授课5.pdf" width="100%" height="800px" style="border: none;"></iframe>

@@ -46,4 +46,4 @@
 ## 案例研究
 1. **研究内容**：以冷门博物馆为例，探讨在运营、管理、推广等方面的创新方式，以及如何实现吸引客流量的目标和规避潜在负面影响。 
 ![exported_image.png](exported_image.png)
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Eleventh_Class_助教课5/Eleventh_Class_助教课5.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Eleventh_Class_助教课5/Eleventh_Class_助教课5.pdf" width="100%" height="800px" style="border: none;"></iframe>

@@ -463,6 +463,6 @@ int *P = &B;
 
 ## 课件 PDF
 
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/大二上/计算机系统基础/bits_ints/03-bits-ints-part2.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/大二上/计算机系统基础/bits_ints/03-bits-ints-part2.pdf" width="100%" height="800px" style="border: none;"></iframe>
 
-[打开 PDF](https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/大二上/计算机系统基础/bits_ints/03-bits-ints-part2.pdf)
+[打开 PDF](https://cognishelf.naimore3.workers.dev/课程笔记/大二上/计算机系统基础/bits_ints/03-bits-ints-part2.pdf)

@@ -33,4 +33,4 @@
 4. **发展中国家对创新的反应与政府角色**：新技术可能加剧不平等，政府应干预创新过程，制定政策引导创新方向，防止不利分配后果。
 5. **政策响应与发展机遇**：政策响应包括改变知识产权规则、加强税收和监管、完善竞争政策、改革贸易规则等。新技术带来金融包容性等机会，但也存在风险，各国应抓住机会，应对挑战，制定综合发展战略。 
 ![exported_image.png](exported_image.png)
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Thirteenth_Class_助教课6/Thirteenth_Class_助教课6.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Thirteenth_Class_助教课6/Thirteenth_Class_助教课6.pdf" width="100%" height="800px" style="border: none;"></iframe>

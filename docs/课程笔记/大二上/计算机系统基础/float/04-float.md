@@ -411,6 +411,6 @@ NaN 分布在数轴两端（负无穷左侧与正无穷右侧之外）。
 
 ## 课件 PDF
 
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/大二上/计算机系统基础/float/04-float.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/大二上/计算机系统基础/float/04-float.pdf" width="100%" height="800px" style="border: none;"></iframe>
 
-[打开 PDF](https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/大二上/计算机系统基础/float/04-float.pdf)
+[打开 PDF](https://cognishelf.naimore3.workers.dev/课程笔记/大二上/计算机系统基础/float/04-float.pdf)

@@ -26,4 +26,4 @@
 ## 学业职业规划建议
 大一大二阶段，可以考取一些证书，积极参与比赛积累经验，如互联网 +、三创、小挑等比赛的国家级奖项很受高校重视，尤其是保研时。同时，要学好英语，有多余时间可以考雅思托福，为未来的升学和就业打下基础。 
 ![exported_image.png](exported_image.png)
-<iframe src="https://naimore3.github.io/Naimore3-s-Learning-Notes/课程笔记/2025寒假/PBL数字经济与智能金融/Seventeenth_Class_升学与就业方向展望/Seventeenth_Class_升学与就业方向展望.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="https://cognishelf.naimore3.workers.dev/课程笔记/2025寒假/PBL数字经济与智能金融/Seventeenth_Class_升学与就业方向展望/Seventeenth_Class_升学与就业方向展望.pdf" width="100%" height="800px" style="border: none;"></iframe>
